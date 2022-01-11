@@ -29,10 +29,10 @@ export default class SearchIndex extends Component {
       <div>
         <Input placeholder='Search Here' onChange={e => this.searchFunction(e)} />
         <h3>Results:</h3>
-        {this.state.searchTerm !== '' ? this.state.filteredSearch.map(item => {
-          return <p>{item}</p>
-        }) : this.state.things.map(item => {
-          return <p>{item}</p>
+        {this.state.searchTerm !== '' ? this.state.filteredSearch.map((item, index) => {
+          return <p key={index}>{item}</p>
+        }) : this.state.things.map((item, index) => {
+          return <p key={index}>{item}</p>
         })}
       </div>
     )
